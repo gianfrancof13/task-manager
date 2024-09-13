@@ -8,7 +8,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Registro enviado:', { username, email, password });
-    // Aquí puedes hacer la lógica para enviar los datos al backend
+    //corregir logica datos al back
   };
 
   return (
