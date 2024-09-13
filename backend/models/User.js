@@ -8,8 +8,7 @@ const User = sequelize.define('User', {
     password: { type: DataTypes.STRING, allowNull: false }
 });
 
-// Encriptar la contraseña antes de guardar el usuario
-User.beforeCreate(async (user) => {
+User.beforeCreate(async (user) => { // encriptar clave antes de crear usuario
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
 });

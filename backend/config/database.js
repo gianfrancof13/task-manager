@@ -1,5 +1,6 @@
-require('dotenv').config();
-//console.log(process.env.DB_USER, process.env.DB_PASSWORD);
+//require('dotenv').config(); probado
+//console.log(process.env.DB_USER, process.env.DB_PASSWORD); funciona ok
+
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(

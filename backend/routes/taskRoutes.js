@@ -3,7 +3,7 @@ const router = express.Router();
 const Task = require('../models/Task');
 const auth = require('../middleware/auth');
 
-// Crear tarea
+//Crear tarea
 router.post('/', auth, async (req, res) => {
     const { title, description } = req.body;
     try {
@@ -14,7 +14,7 @@ router.post('/', auth, async (req, res) => {
     }
 });
 
-// Leer tareas
+//Leer tareas
 router.get('/', auth, async (req, res) => {
     try {
         const tasks = await Task.findAll({ where: { userId: req.user.userId } });
@@ -24,7 +24,7 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
-// Actualizar tarea
+//Actualizar tarea
 router.put('/:id', auth, async (req, res) => {
     const { id } = req.params;
     const { title, description, completed } = req.body;
@@ -42,7 +42,7 @@ router.put('/:id', auth, async (req, res) => {
     }
 });
 
-// Eliminar tarea
+//Eliminar tarea
 router.delete('/:id', auth, async (req, res) => {
     const { id } = req.params;
     try {

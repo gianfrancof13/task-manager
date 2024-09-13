@@ -8,7 +8,6 @@ const Task = sequelize.define('Task', {
     completed: { type: DataTypes.BOOLEAN, defaultValue: false }
 });
 
-// Relación: un usuario tiene muchas tareas
-Task.belongsTo(User, { foreignKey: 'userId' });
+Task.belongsTo(User, { foreignKey: 'userId' }); //cada tarea a un usuario, belongsTo
 
 module.exports = Task;
